@@ -8,6 +8,12 @@ interface IPropsEventList {
 }
 
 export const EventList: React.FC<IPropsEventList> = ({ events}) => {
+    console.log(events, 'events');
+
+    if(!events) {
+        return <p>...Loading</p>
+    }
+
     return(
         <ul className={classes.list}>
             {events.map(
