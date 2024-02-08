@@ -1,5 +1,6 @@
 import React, {ReactNode} from "react";
 import {MainHeader} from "./mainHeader";
+import Head from "next/head";
 
 interface IPropsLayout {
     children: ReactNode;
@@ -8,7 +9,10 @@ interface IPropsLayout {
 export const Layout: React.FC<IPropsLayout> = ({children}) => {
     return(
         <>
-            <MainHeader />
+            <Head>
+                <title>NextJS Event</title>
+            </Head>
+            <MainHeader/>
             <main>
                 {children}
             </main>

@@ -3,6 +3,8 @@ import EventLogistics from "../../../components/event/detail/logistics/EventLogi
 import EventContent from "../../../components/event/detail/content/EventContent";
 import {GetStaticPaths, GetStaticProps} from "next";
 import { getEventById, getFeaturedEvents } from "../../../helpers/api-util";
+import Head from "next/head";
+import React from "react";
 
 const EventDetailPage = ({ currentEvent }) => {
     if(!currentEvent) {
@@ -15,6 +17,13 @@ const EventDetailPage = ({ currentEvent }) => {
 
     return(
         <>
+            <Head>
+                <title>{currentEvent.title}</title>
+                <meta
+                    name='description'
+                    content='Fing a lot of great events, basing on your personality'
+                />
+            </Head>
             <EventSummary title={currentEvent.title} />
             <EventLogistics
                 date={currentEvent.date}

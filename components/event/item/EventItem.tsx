@@ -1,11 +1,11 @@
 import React from "react";
 import {IEventModel} from "../../../models/IEventModel";
-import Link from "next/link";
 import classes from "./event-item.module.css";
 import {Button} from "../../common/button/Button";
 import DateIcon from "../../icons/date-icon";
 import AddressIcon from "../../icons/address-icon";
 import ArrowRightIcon from "../../icons/arrow-right-icon";
+import Image from "next/image";
 
 interface IPropsEventItem {
     event: IEventModel;
@@ -36,7 +36,7 @@ export const EventItem: React.FC<IPropsEventItem> = ({
 
     return(
         <li className={classes.item}>
-            <img src={'/' + image} alt={title}/>
+            <Image src={'/' + image} alt={title} width={250} height={160}/>
             <div className={classes.content}>
                 <div>
                     <h2>{title}</h2>

@@ -3,6 +3,7 @@ import {getFeaturedEvents} from "../helpers/api-util";
 import {GetStaticProps} from "next";
 import React from "react";
 import {IEventModel} from "../models/IEventModel";
+import Head from "next/head";
 
 interface IPropsHomePage {
     events: IEventModel[];
@@ -10,9 +11,16 @@ interface IPropsHomePage {
 
 const HomePage: React.FC<IPropsHomePage> = ({ events}) => {
     return(
-        <div>
+        <>
+            <Head>
+                <title>NextJs Events</title>
+                <meta
+                    name='description'
+                    content='Fing a lot of great events, basing on your personality'
+                />
+            </Head>
             <EventList events={events}/>
-        </div>
+        </>
     )
 }
 
